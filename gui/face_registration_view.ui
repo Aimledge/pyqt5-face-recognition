@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FaceRegistrationUI</class>
+ <widget class="QDialog" name="FaceRegistrationUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>774</width>
+    <height>485</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Face Registration</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="face-cool">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>40</y>
+     <width>241</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <property name="labelAlignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Album</string>
+      </property>
+      <property name="buddy">
+       <cstring>registryNameSelect</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="registryNameSelect"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="captureButton">
+      <property name="text">
+       <string>Capture</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="retakeButton">
+      <property name="text">
+       <string>Retake</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="nameInput"/>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="registerButton">
+      <property name="text">
+       <string>Register</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>430</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>481</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <widget class="QWidget" name="viewFinderPage">
+    <widget class="QCameraViewfinder" name="viewFinder" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>481</width>
+       <height>361</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="previewPage">
+    <widget class="QLabel" name="picturePreview">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>481</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCameraViewfinder</class>
+   <extends>QWidget</extends>
+   <header>PyQt5.QtMultimediaWidgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nameInput</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>handle_face_name(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>registerButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>register_face()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>retakeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>retake_picture()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>625</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>694</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>captureButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>capture_picture()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>590</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>registryNameSelect</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>FaceRegistrationUI</receiver>
+   <slot>set_current_face_registry(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>500</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>handle_face_name(QString)</slot>
+  <slot>register_face()</slot>
+  <slot>capture_picture()</slot>
+  <slot>retake_picture()</slot>
+  <slot>set_current_face_registry(QString)</slot>
+ </slots>
+</ui>

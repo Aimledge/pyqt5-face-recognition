@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FaceRegistryUI</class>
+ <widget class="QDialog" name="FaceRegistryUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>763</width>
+    <height>499</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Face Album</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="face-cool">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>70</y>
+     <width>247</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1" colspan="3">
+     <widget class="QPushButton" name="loadButton">
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Album</string>
+      </property>
+      <property name="buddy">
+       <cstring>registryNameSelect</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="3">
+     <widget class="QComboBox" name="registryNameSelect"/>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="nextFaceButton">
+      <property name="text">
+       <string>Next &gt;&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QPushButton" name="prevFaceButton">
+      <property name="text">
+       <string>&lt;&lt; Prev</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2" colspan="2">
+     <widget class="QLineEdit" name="faceName">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="buddy">
+       <cstring>faceName</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="faceImageArea" native="true">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>321</width>
+     <height>301</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeViewButton">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>440</y>
+     <width>85</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistryUI</receiver>
+   <slot>load_face_registry()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>643</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nextFaceButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistryUI</receiver>
+   <slot>show_next_face()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>576</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>prevFaceButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistryUI</receiver>
+   <slot>show_prev_face()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>565</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>520</x>
+     <y>435</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeViewButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FaceRegistryUI</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>706</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>409</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>registryNameSelect</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>FaceRegistryUI</receiver>
+   <slot>set_current_face_registry(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>608</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>457</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>load_face_registry()</slot>
+  <slot>show_next_face()</slot>
+  <slot>show_prev_face()</slot>
+  <slot>set_current_face_registry(QString)</slot>
+ </slots>
+</ui>

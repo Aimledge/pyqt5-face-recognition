@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeleteRegistry</class>
+ <widget class="QDialog" name="DeleteRegistry">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>147</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Delete Album</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="edit-delete">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <widget class="QPushButton" name="deleteButton">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>100</y>
+     <width>85</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>74</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Album Name</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="faceRegistryBox">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>40</y>
+     <width>201</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>deleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DeleteRegistry</receiver>
+   <slot>delete_registry()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>347</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>delete_registry()</slot>
+  <slot>set_registry_name(QString)</slot>
+ </slots>
+</ui>

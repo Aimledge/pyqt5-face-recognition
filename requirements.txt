@@ -1,0 +1,8 @@
+opencv_python==3.4.2.17
+botocore==1.12.140
+face_recognition==1.2.3
+boto3==1.9.140
+scipy==1.1.0
+numpy==1.14.3
+Pillow==6.0.0
+PyQt5==5.12.1
